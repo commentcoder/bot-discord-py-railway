@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+import railway
+
 
 # Créer une instance du bot avec le préfixe "!"
 bot = commands.Bot(command_prefix='!')
@@ -14,5 +16,8 @@ async def on_ready():
 async def greet(ctx):
     await ctx.send(f'Hello {ctx.author.mention}!')
 
+# On récupère notre token discord dans l'env de Railway
+bot_token = railway.get("DISCORD_BOT_TOKEN")
+
 # Pour lancer le bot
-bot.run('YOUR_BOT_TOKEN')
+bot.run(bot_token)
