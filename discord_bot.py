@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import railway
 
-
 # Créer une instance du bot avec le préfixe "!"
 bot = commands.Bot(command_prefix='!')
 
