@@ -1,5 +1,5 @@
+import os
 import discord
-import railway
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -19,7 +19,7 @@ async def on_message(message):
         await message.channel.send('Hello!')
         
 # On récupère notre token discord dans l'env de Railway
-bot_token = railway.get("DISCORD_BOT_TOKEN")
+bot_token = os.environ.get("DISCORD_BOT_TOKEN")
 
 # Pour lancer le bot
 client.run(bot_token)
